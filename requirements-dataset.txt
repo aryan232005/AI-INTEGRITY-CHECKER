@@ -1,0 +1,5 @@
+# Only needed to REBUILD the synthetic sample dataset (scripts/build_sample_dataset.py)
+reportlab>=4.0
+python-docx>=1.1
+espeakng-loader>=0.2     # bundled espeak-ng for offline text-to-speech
+numpy>=1.24

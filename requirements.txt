@@ -1,0 +1,10 @@
+# Core pipeline (tested versions in README; lower bounds keep Python 3.9 installs possible)
+numpy>=1.24
+scikit-learn>=1.3
+pdfplumber>=0.10
+python-docx>=1.1
+faiss-cpu>=1.7.4
+sentence-transformers>=2.7      # pulls torch + transformers; all-MiniLM-L6-v2 (~90 MB)
+faster-whisper>=1.0             # CTranslate2 build of openai/whisper (base ~140 MB, tiny ~75 MB)
+rich>=13
+# System dependency (not pip): ffmpeg  ->  apt install ffmpeg | brew install ffmpeg

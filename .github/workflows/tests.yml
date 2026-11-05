@@ -1,0 +1,17 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.11"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      # Tests use the offline TF-IDF embedder, so no model download is needed.
+      - run: pip install numpy scikit-learn pdfplumber python-docx faiss-cpu rich faster-whisper
+      - run: python -m unittest discover -s tests -v
