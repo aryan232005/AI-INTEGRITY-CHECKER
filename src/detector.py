@@ -149,8 +149,8 @@ def roberta_ai_score(text: str, model_name: str) -> Tuple[Optional[float], dict]
     for out in pipe(blocks):
         d = {o["label"].lower(): o["score"] for o in out}
         probs.append(d.get("fake", d.get("ai", d.get("label_1", 0.0))))
-    return round(100 * sum(probs) / len(probs), 1), {"backend": model_name,
-                                                      "blocks": len(blocks)}
+    score = round(100 * sum(probs) / len(probs), 1)
+    return score, {"backend": model_name, "blocks": len(blocks)}
 
 
 def estimate_ai(text: str, backend: str = "heuristic") -> Tuple[Optional[float], dict]:
@@ -233,7 +233,10 @@ class IntegrityEngine:
             for i in range(m.query.s_from, m.query.s_to + 1):
                 covered.add(i)
                 by_doc[m.target.doc_id].add(i)
-        w = lambda idx: sum(sents[i].n_words for i in idx)  # noqa: E731
+
+        def w(idx):
+            return sum(sents[i].n_words for i in idx)
+
         return (100.0 * w(covered) / total,
                 {d: round(100.0 * w(ix) / total, 1) for d, ix in by_doc.items()})
 
@@ -344,7 +347,8 @@ class IntegrityEngine:
         ov = max(r.scores["peer_similarity_percentage"] or 0,
                  r.scores["external_similarity_percentage"] or 0)
         ai = r.scores["ai_generated_probability"] or 0
-        if ov >= self.cfg.high_overlap_pct or (ai >= self.cfg.ai_high and ov >= self.cfg.medium_overlap_pct):
+        ai_and_overlap = ai >= self.cfg.ai_high and ov >= self.cfg.medium_overlap_pct
+        if ov >= self.cfg.high_overlap_pct or ai_and_overlap:
             return "HIGH"
         # AI likelihood alone never yields HIGH: detectors are unreliable evidence
         if ov >= self.cfg.medium_overlap_pct or ai >= self.cfg.ai_medium:

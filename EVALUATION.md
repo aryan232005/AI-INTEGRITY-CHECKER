@@ -137,8 +137,8 @@ high Jaccard for `DIRECT_COPY`, and call anything else a semantic match when the
 Also untested: noisier real recordings, accents, or a larger Whisper model.
 
 **3. The copied-from file is also flagged, and direction is ambiguous.** 03 is the PDF that was read
-aloud, yet it gets MEDIUM (30.3% overlap) because similarity is symmetric. The engine now adds a
-`direction_hints` entry using containment asymmetry: 100% of 04 appears in 03, but only 30% of 03 appears
+aloud, yet it gets  MEDIUM (about 25-30% overlap; it shifts slightly between runs because Whisper's transcript does) because similarity is symmetric. The engine now adds a
+`direction_hints` entry using containment asymmetry: 100% of 04 appears in 03, but only about 25-30% of 03 appears
 in 04, so 04 is the derived file. That is only a hint: it also fires when a short text is quoted inside a
 long one, and it says nothing about who submitted first (the files carry no timestamps). Pairs of equal
 size, such as the exact copies 01 and 02, get no direction at all.
@@ -155,6 +155,18 @@ produce a HIGH verdict.
 structure and facts. Harder paraphrases (restructured arguments, summaries, translation-and-back,
 LLM rewrites with new examples) are untested, and MiniLM is known to be weaker on those. Borderline
 pairs are candidates for cross-encoder re-ranking.
+
+**6. Small-batch flaw in the boilerplate filter (found by edge-case testing, fixed).** The
+document-frequency rule excluded any sentence present in >= 40% of files. In a folder of 3-5 files an
+exact copy pair reaches 40-67%, so the pair was treated as a template and both files scored 0%
+(reproduced with two identical PDFs plus one other file). The 15-file sample set hid this because a pair is
+only 15% of 13 processable files. The same run also crashed when *every* file was unreadable (the TF-IDF
+fallback cannot fit an empty corpus). *Fixes:* a sentence must be shared by at least 3 documents to count
+as boilerplate; a document with under 40 words of its own text keeps its shared text in scope; and the
+runner now writes "unprocessable" reports and exits cleanly when nothing can be read. Regression tests
+cover all three. *Remaining weakness:* three students who copy the same block at the start of otherwise
+original answers are indistinguishable, by content alone, from three students answering the same
+prompt; the report lists every excluded sentence so a reviewer can look.
 
 **Known limitations (reasoned, not measured).** Coverage marks every sentence inside a matching window, so
 partial overlap can be slightly over-counted. The relaxed boilerplate rule (3+ documents, head or tail
@@ -190,6 +202,6 @@ pip install -r requirements.txt
 python scripts/download_models.py
 python run_integrity_check.py --input_dir ./sample_submissions --output_dir ./reports --knowledge_base ./knowledge_base
 python scripts/evaluate.py
-python -m unittest discover -s tests -v       # 18 tests; Whisper is disabled inside the tests
+python -m unittest discover -s tests -v       # 22 tests; Whisper is disabled inside the tests
 python scripts/debug_whisper.py               # only if video transcription fails
 ```

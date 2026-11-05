@@ -21,6 +21,7 @@ class Config:
     boilerplate_df: float = 0.40       # sentence present in >=40% of submissions
     boilerplate_min_docs: int = 3      # ...or in >=3 docs with the relaxed rule
     boilerplate_relaxed_df: float = 0.25
+    boilerplate_min_original_words: int = 40   # fewer own words than this -> not a template
     boilerplate_sim: float = 0.90      # near-identical passage test
     # --- risk bands -----------------------------------------------------------
     high_overlap_pct: float = 40.0

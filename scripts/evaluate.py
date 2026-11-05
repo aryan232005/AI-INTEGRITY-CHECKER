@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Score the pipeline against sample_submissions/dataset_manifest.json.
 
-    python run_integrity_check.py --input_dir sample_submissions --output_dir reports --knowledge_base knowledge_base
+    python run_integrity_check.py --input_dir sample_submissions --output_dir reports
     python scripts/evaluate.py --reports reports --manifest sample_submissions/dataset_manifest.json
 
 Prints Markdown tables (paste into EVALUATION.md) and writes evaluation_metrics.json.
@@ -28,7 +28,8 @@ def confusion(gold, pred):
     tn = sum((not g) and (not p) for g, p in zip(gold, pred))
     prec = tp / (tp + fp) if tp + fp else float("nan")
     rec = tp / (tp + fn) if tp + fn else float("nan")
-    f1 = 2 * prec * rec / (prec + rec) if prec == prec and rec == rec and prec + rec else float("nan")
+    defined = prec == prec and rec == rec and prec + rec > 0   # NaN != NaN
+    f1 = 2 * prec * rec / (prec + rec) if defined else float("nan")
     return dict(TP=tp, FP=fp, FN=fn, TN=tn, precision=prec, recall=rec, f1=f1)
 
 
@@ -120,16 +121,20 @@ def main():
                 f"flag if >= {PAIR_FLAG_PCT:.0f}% overlap)", c_pair)]
     md.append("Recall by relationship type: " + ", ".join(
         f"{t}: {sum(v)}/{len(v)}" for t, v in by_type.items()) + "\n")
-    md.append(table(f"External-source plagiarism ({len(ok)} documents, flag >= {EXT_FLAG_PCT:.0f}%)", c_ext))
-    md.append(table(f"AI-generated detection ({len(txt)} text documents, flag >= {AI_FLAG:.0f}%)", c_ai))
+    md.append(table(f"External-source plagiarism ({len(ok)} documents, "
+                    f"flag >= {EXT_FLAG_PCT:.0f}%)", c_ext))
+    md.append(table(f"AI-generated detection ({len(txt)} text documents, "
+                    f"flag >= {AI_FLAG:.0f}%)", c_ai))
     md.append(f"**Boilerplate (Scenario 4):** {bp_fp} of {len(bp_pairs)} template-sharing "
               f"pairs falsely flagged.\n")
     md.append(f"**Robustness (Scenario 3):** unprocessable files = {unproc}; "
               f"matches manifest: {robust_ok}; pipeline completed without crashing.\n")
     md.append("**Best passage-cosine per document pair**\n")
     md.append(f"| Group | n | min | mean | max |\n|---|---|---|---|---|\n"
-              f"| True overlap pairs | {len(pos)} | {min(pos):.3f} | {np.mean(pos):.3f} | {max(pos):.3f} |\n"
-              f"| Unrelated pairs | {len(neg)} | {min(neg):.3f} | {np.mean(neg):.3f} | {max(neg):.3f} |\n")
+              f"| True overlap pairs | {len(pos)} | {min(pos):.3f} | {np.mean(pos):.3f} "
+              f"| {max(pos):.3f} |\n"
+              f"| Unrelated pairs | {len(neg)} | {min(neg):.3f} | {np.mean(neg):.3f} "
+              f"| {max(neg):.3f} |\n")
     print("\n".join(md))
     print("Missed pairs:", missed, "\nSpurious pairs:", spurious)
     json.dump({"embedding": emb_name, "pair": c_pair, "external": c_ext, "ai": c_ai,

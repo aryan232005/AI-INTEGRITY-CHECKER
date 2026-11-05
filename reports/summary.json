@@ -8,10 +8,10 @@
     "n_documents": 15
   },
   "timings_s": {
-    "ingestion": 27.96,
-    "indexing": 67.13,
-    "scoring": 0.03,
-    "total": 96.03
+    "ingestion": 14.84,
+    "indexing": 50.26,
+    "scoring": 0.05,
+    "total": 66.01
   },
   "documents": [
     {
@@ -38,7 +38,7 @@
       "document_id": "03_supply_chain_report.pdf",
       "risk": "MEDIUM",
       "scores": {
-        "peer_similarity_percentage": 30.3,
+        "peer_similarity_percentage": 25.5,
         "external_similarity_percentage": 0.0,
         "ai_generated_probability": 51.1
       },
@@ -171,7 +171,7 @@
       "12_snack_market_partnering.docx": 100.0
     },
     "03_supply_chain_report.pdf": {
-      "04_pitch_supply_chain.mp4": 30.3
+      "04_pitch_supply_chain.mp4": 25.5
     },
     "04_pitch_supply_chain.mp4": {
       "03_supply_chain_report.pdf": 100.0

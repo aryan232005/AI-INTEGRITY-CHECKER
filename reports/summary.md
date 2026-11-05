@@ -11,7 +11,7 @@ Documents: 15 (13 processed, 2 skipped) | embedding: **all-MiniLM-L6-v2** | matc
 | 04_pitch_supply_chain.mp4 | HIGH | 100.0 | 0.0 | n/a | 03_supply_chain_report.pdf (100.0%) |
 | 12_snack_market_partnering.docx | HIGH | 86.2 | 0.0 | 45.8 | 02_vietnam_entry_strategy.docx (86.2%) |
 | 14_bakery_mill_report.pdf | HIGH | 0.0 | 52.7 | 11.6 | vertical_integration.txt [ref] (52.7%) |
-| 03_supply_chain_report.pdf | MEDIUM | 30.3 | 0.0 | 51.1 | 04_pitch_supply_chain.mp4 (30.3%) |
+| 03_supply_chain_report.pdf | MEDIUM | 25.5 | 0.0 | 51.1 | 04_pitch_supply_chain.mp4 (25.5%) |
 | 05_ai_education_essay.docx | MEDIUM | 0.0 | 0.0 | 99.8 | - |
 | 06_case_alpha.pdf | LOW | 0.0 | 0.0 | 3.8 | - |
 | 07_case_bravo.docx | LOW | 0.0 | 0.0 | 9.0 | - |
@@ -28,7 +28,7 @@ Documents: 15 (13 processed, 2 skipped) | embedding: **all-MiniLM-L6-v2** | matc
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 01 01_market_entry_vietnam.docx |-|100|.|.|.|.|.|.|.|100|.|.|.|
 | 02 02_vietnam_entry_strategy.docx |100|-|.|.|.|.|.|.|.|100|.|.|.|
-| 03 03_supply_chain_report.pdf |.|.|-|30|.|.|.|.|.|.|.|.|.|
+| 03 03_supply_chain_report.pdf |.|.|-|26|.|.|.|.|.|.|.|.|.|
 | 04 04_pitch_supply_chain.mp4 |.|.|100|-|.|.|.|.|.|.|.|.|.|
 | 05 05_ai_education_essay.docx |.|.|.|.|-|.|.|.|.|.|.|.|.|
 | 06 06_case_alpha.pdf |.|.|.|.|.|-|.|.|.|.|.|.|.|
@@ -40,4 +40,4 @@ Documents: 15 (13 processed, 2 skipped) | embedding: **all-MiniLM-L6-v2** | matc
 | 14 14_bakery_mill_report.pdf |.|.|.|.|.|.|.|.|.|.|.|-|.|
 | 15 15_urban_beekeeping.pdf |.|.|.|.|.|.|.|.|.|.|.|.|-|
 
-Timings (s): {'ingestion': 27.96, 'indexing': 67.13, 'scoring': 0.03, 'total': 96.03}
+Timings (s): {'ingestion': 14.84, 'indexing': 50.26, 'scoring': 0.05, 'total': 66.01}

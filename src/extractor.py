@@ -107,17 +107,17 @@ def _strip_repeated_lines(pages: List[List[str]]) -> List[List[str]]:
 
     counts: Counter = Counter()
     for lines in pages:
-        counts.update({key(l) for l in lines if l.strip()})
+        counts.update({key(ln) for ln in lines if ln.strip()})
     out = []
     for lines in pages:
         kept = []
-        for l in lines:
-            s = l.strip()
+        for ln in lines:
+            s = ln.strip()
             if not s or _PAGE_NUM.match(s):
                 continue
-            if n >= 3 and counts[key(l)] >= max(2, 0.5 * n):
+            if n >= 3 and counts[key(ln)] >= max(2, 0.5 * n):
                 continue
-            kept.append(l)
+            kept.append(ln)
         out.append(kept)
     return out
 

@@ -24,7 +24,8 @@ def extract_offline(path):
 
     Videos then use their '<name>.transcript.json' sidecar fixtures.  Real
     Whisper is exercised by running the pipeline itself (see EVALUATION.md)."""
-    with mock.patch("src.extractor._transcribe_whisper", side_effect=RuntimeError("tests run offline")):
+    with mock.patch("src.extractor._transcribe_whisper",
+                    side_effect=RuntimeError("tests run offline")):
         return extract_file(path)
 
 
@@ -32,7 +33,8 @@ class TestRobustness(unittest.TestCase):
     def test_zero_byte_pdf(self):
         with tempfile.TemporaryDirectory() as t:
             p = os.path.join(t, "a.pdf")
-            open(p, "wb").close()
+            with open(p, "wb"):
+                pass
             d = extract_file(p)
             self.assertFalse(d.ok)
             self.assertIn("empty", d.error)
@@ -41,8 +43,8 @@ class TestRobustness(unittest.TestCase):
         with tempfile.TemporaryDirectory() as t:
             for name in ("x.pdf", "x.docx", "x.mp4"):
                 p = os.path.join(t, name)
-                with open(p, "wb") as f:
-                  f.write(b"this is not a real file" * 10)
+                with open(p, "wb") as fh:
+                    fh.write(b"this is not a real file" * 10)
                 d = extract_file(p)
                 self.assertFalse(d.ok, name)
                 self.assertTrue(d.warnings)
@@ -103,7 +105,8 @@ class TestIndexing(unittest.TestCase):
         cfg = Config()
         tmpl = "Please read the case prompt carefully before you answer anything."
         sm = {f"d{i}": [Sentence(f"d{i}", 0, tmpl),
-                        Sentence(f"d{i}", 1, f"Unique analysis number {i} about something different here.")]
+                        Sentence(f"d{i}", 1, " ".join(f"original{i}analysis{k}"
+                                                      for k in range(60)))]
               for i in range(4)}
         flagged, info = find_boilerplate(sm, cfg)
         self.assertTrue(all(0 in flagged[d] and 1 not in flagged[d] for d in sm))
@@ -112,6 +115,45 @@ class TestIndexing(unittest.TestCase):
                for i in range(6)}
         flagged2, _ = find_boilerplate(sm2, cfg)
         self.assertFalse(any(flagged2[d] for d in sm2))
+
+
+class TestBoilerplateEdgeCases(unittest.TestCase):
+    TEXT = "The quarterly review shows that margins fell because fuel costs rose sharply again."
+
+    def _docs(self, texts):
+        return {f"d{i}": [Sentence(f"d{i}", j, t) for j, t in enumerate(ts)]
+                for i, ts in enumerate(texts)}
+
+    def test_exact_copy_pair_in_small_batch_is_not_boilerplate(self):
+        other = ["Completely different content about beekeeping on city rooftops in summer."]
+        flagged, _ = find_boilerplate(self._docs([[self.TEXT], [self.TEXT], other]), Config())
+        self.assertFalse(any(flagged.values()))
+
+    def test_identical_trio_has_no_original_content_so_is_still_scored(self):
+        flagged, _ = find_boilerplate(self._docs([[self.TEXT]] * 3), Config())
+        self.assertFalse(any(flagged.values()))
+
+    def test_template_with_original_answers_is_still_excluded(self):
+        def own(i):
+            return " ".join(f"unique{i}word{k}" for k in range(60))
+
+        docs = self._docs([[self.TEXT, own(i)] for i in range(4)])
+        flagged, _ = find_boilerplate(docs, Config())
+        self.assertTrue(all(flagged[d] == {0} for d in docs))
+
+
+class TestCli(unittest.TestCase):
+    def test_all_files_unreadable_does_not_crash(self):
+        import run_integrity_check
+        with tempfile.TemporaryDirectory() as src, tempfile.TemporaryDirectory() as out:
+            with open(os.path.join(src, "a.pdf"), "wb") as fh:
+                fh.write(b"junk")
+            open(os.path.join(src, "b.docx"), "wb").close()
+            code = run_integrity_check.main(["--input_dir", src, "--output_dir", out,
+                                             "--embedder", "tfidf"])
+            self.assertEqual(code, 0)
+            self.assertTrue(os.path.exists(os.path.join(out, "a.pdf.json")))
+            self.assertTrue(os.path.exists(os.path.join(out, "summary.md")))
 
 
 class TestEndToEnd(unittest.TestCase):

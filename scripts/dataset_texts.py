@@ -79,15 +79,18 @@ SC_PAGES = [
 
 # What the speaker says in 04_pitch_supply_chain.mp4 (reads page 2, with one slip)
 VIDEO_SC_SENTENCES = [
-    "Operating margins contracted by 4.2% over Q3 due to supply chain bottlenecks at the Rotterdam hub.",
+    "Operating margins contracted by 4.2% over Q3 due to supply chain bottlenecks at the "
+    "Rotterdam hub.",
     "Fuel surcharges rose faster than we could pass on to customers.",
-    "Two long-haul carriers failed to meet agreed delivery windows, and we paid penalty fees on thirty-one shipments.",
+    "Two long-haul carriers failed to meet agreed delivery windows, and we paid penalty fees "
+    "on thirty-one shipments.",
     "In response we have moved forty percent of Rotterdam volume to the Antwerp terminal.",
 ]
 
 VIDEO_ORIGINAL_SENTENCES = [
     "Hi everyone, we are building a bicycle sharing app for university campuses.",
-    "Students unlock a bike with their phone, ride between lecture halls, and park it at any marked rack.",
+    "Students unlock a bike with their phone, ride between lecture halls, and park it at any "
+    "marked rack.",
     "Our pilot with two hundred bikes showed that each bike was used seven times a day.",
     "We want to expand to ten campuses by next autumn.",
 ]

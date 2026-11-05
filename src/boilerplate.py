@@ -44,7 +44,8 @@ def find_boilerplate(sent_map: Dict[str, List[Sentence]], cfg):
         df = len(per_doc) / n_docs
         positions = [p for ps in per_doc.values() for p in ps]
         head_tail = all(p <= 0.30 or p >= 0.85 for p in positions)
-        strict = df >= cfg.boilerplate_df
+        # two files sharing a sentence is a copy, not a template: require >= min_docs
+        strict = df >= cfg.boilerplate_df and len(per_doc) >= cfg.boilerplate_min_docs
         relaxed = (len(per_doc) >= cfg.boilerplate_min_docs
                    and df >= cfg.boilerplate_relaxed_df and head_tail)
         if strict or relaxed:
@@ -54,4 +55,9 @@ def find_boilerplate(sent_map: Dict[str, List[Sentence]], cfg):
         for s in sents:
             if norm_key(s.text) in boiler_keys:
                 flagged[doc_id].add(s.idx)
+        # A document made (almost) entirely of shared text has no original content of its
+        # own: that is duplication, not a template with an original answer.  Keep it scored.
+        original_words = sum(s.n_words for s in sents if s.idx not in flagged[doc_id])
+        if flagged[doc_id] and original_words < cfg.boilerplate_min_original_words:
+            flagged[doc_id] = set()
     return flagged, boiler_keys

@@ -13,7 +13,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 video = sys.argv[1] if len(sys.argv) > 1 else "sample_submissions/04_pitch_supply_chain.mp4"
 print("Package versions:")
-for pkg in ("faster-whisper", "ctranslate2", "huggingface_hub", "tokenizers", "onnxruntime", "av", "numpy"):
+PACKAGES = ("faster-whisper", "ctranslate2", "huggingface_hub", "tokenizers",
+            "onnxruntime", "av", "numpy")
+for pkg in PACKAGES:
     try:
         print(f"  {pkg:16} {md.version(pkg)}")
     except Exception:

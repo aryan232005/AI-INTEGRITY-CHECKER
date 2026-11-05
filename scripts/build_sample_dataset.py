@@ -141,7 +141,8 @@ def main():
             "01_market_entry_vietnam.docx": {"role": "original source A"},
             "02_vietnam_entry_strategy.docx": {"role": "EXACT COPY of 01"},
             "03_supply_chain_report.pdf": {"role": "source of the cross-modal match (page 2)"},
-            "04_pitch_supply_chain.mp4": {"role": "reads page-2 paragraph of 03 aloud, one word dropped"},
+            "04_pitch_supply_chain.mp4": {
+                "role": "reads the page-2 paragraph of 03 aloud, one word dropped"},
             "05_ai_education_essay.docx": {"role": "LLM-style essay (AI-generated)"},
             "06_case_alpha.pdf": {"role": "original + shared 150-word prompt"},
             "07_case_bravo.docx": {"role": "original + shared 150-word prompt"},

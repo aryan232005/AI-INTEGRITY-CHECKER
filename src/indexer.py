@@ -276,7 +276,7 @@ class Corpus:
             sents = sentences_of(r)
             self.ref_sents[r.doc_id] = sents
             ref_units += build_passages(r.doc_id, "reference", sents,
-                                       self.cfg.passage_min_words, kind="reference")
+                                        self.cfg.passage_min_words, kind="reference")
         all_units = [u for d in self.docs.values() for u in d.chunks + d.passages] + ref_units
         self.embedder.fit([u.text for u in all_units])  # no-op for neural models
         dim = None

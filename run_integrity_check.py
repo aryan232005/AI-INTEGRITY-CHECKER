@@ -30,11 +30,14 @@ def parse_args(argv=None):
     p = argparse.ArgumentParser(description="Multimodal submission integrity checker")
     p.add_argument("--input_dir", required=True)
     p.add_argument("--output_dir", required=True)
-    p.add_argument("--knowledge_base", default=None,
-                   help="folder of .txt/.md reference sources for external matching")
+    default_kb = os.path.join(os.path.dirname(os.path.abspath(__file__)), "knowledge_base")
+    p.add_argument("--knowledge_base", default=default_kb if os.path.isdir(default_kb) else None,
+                   help="folder of .txt/.md reference sources for external matching "
+                        "(default: ./knowledge_base next to this script, if present)")
     p.add_argument("--embedder", choices=["auto", "minilm", "tfidf"], default="auto")
     p.add_argument("--ai_backend", choices=["heuristic", "roberta"], default="heuristic",
-                   help="roberta = HF openai-community/roberta-base-openai-detector (opt-in download)")
+                   help="roberta = HF openai-community/roberta-base-openai-detector "
+                        "(opt-in download)")
     p.add_argument("--whisper_model", default="base", help="tiny | base | path")
     p.add_argument("--threshold", type=float, default=None, help="override match threshold")
     p.add_argument("--boilerplate_df", type=float, default=None)
@@ -83,7 +86,17 @@ def main(argv=None) -> int:
                     refs.append(r)
         console.print(f"Knowledge base: {len(refs)} reference documents")
     if not good:
-        console.print("[red]No processable documents.[/red]")
+        console.print("[red]No processable documents - writing reports for skipped files.[/red]")
+        results = [DocResult(d.doc_id, d.modality, status="UNPROCESSABLE",
+                             warnings=list(d.warnings), risk="UNPROCESSABLE") for d in docs]
+        run_info = {"embedding_backend": "none (nothing to index)",
+                    "match_threshold": cfg.match_threshold,
+                    "direct_threshold": cfg.direct_threshold, "version": __version__,
+                    "notes": [], "n_documents": len(docs)}
+        write_reports(results, a.output_dir, run_info)
+        write_summary(results, {}, a.output_dir, run_info, {"total": round(time.time() - t0, 2)})
+        console.print(f"Reports written to [bold]{a.output_dir}[/bold]")
+        return 0
 
     # 2. indexing ---------------------------------------------------------
     t1 = time.time()

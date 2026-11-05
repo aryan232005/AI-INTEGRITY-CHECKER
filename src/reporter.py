@@ -131,7 +131,11 @@ def write_summary(results: List[DocResult], matrix: Dict[str, Dict[str, float]],
     L += ["## Risk overview", "", "| Document | Risk | Peer % | External % | AI % | Top overlap |",
           "|---|---|---|---|---|---|"]
     order = {"HIGH": 0, "MEDIUM": 1, "LOW": 2, "UNPROCESSABLE": 3}
-    for r in sorted(results, key=lambda r: (order[r.risk if r.status == "OK" else "UNPROCESSABLE"], r.doc_id)):
+
+    def sort_key(r):
+        return order[r.risk if r.status == "OK" else "UNPROCESSABLE"], r.doc_id
+
+    for r in sorted(results, key=sort_key):
         if r.status != "OK":
             L.append(f"| {r.doc_id} | UNPROCESSABLE | - | - | - | {r.warnings[-1]} |")
             continue
@@ -149,8 +153,10 @@ def write_summary(results: List[DocResult], matrix: Dict[str, Dict[str, float]],
     L.append("| |" + "|".join(short[d] for d in ids) + "|")
     L.append("|---|" + "---|" * len(ids))
     for a in ids:
-        row = [("-" if a == b else (f"{matrix.get(a, {}).get(b, 0):.0f}" if matrix.get(a, {}).get(b) else "."))
-               for b in ids]
+        row = []
+        for b in ids:
+            pct = matrix.get(a, {}).get(b, 0)
+            row.append("-" if a == b else (f"{pct:.0f}" if pct else "."))
         L.append(f"| {short[a]} {a} |" + "|".join(row) + "|")
     L += ["", f"Timings (s): {timings}"]
     with open(os.path.join(out_dir, "summary.md"), "w", encoding="utf-8") as fh:

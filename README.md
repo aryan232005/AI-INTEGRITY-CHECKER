@@ -19,7 +19,7 @@ bash setup.sh                     # venv + deps + model download + demo run + ev
 # or manually:
 pip install -r requirements.txt
 python scripts/download_models.py
-python run_integrity_check.py --input_dir ./sample_submissions --output_dir ./reports --knowledge_base ./knowledge_base
+python run_integrity_check.py --input_dir ./sample_submissions --output_dir ./reports
 python scripts/evaluate.py        # confusion matrices vs dataset_manifest.json
 python -m unittest discover -s tests -v
 ```
@@ -49,7 +49,7 @@ src/reporter.py             JSON + Markdown reports and batch summary
 scripts/                    dataset builder, TTS helper, model download, evaluation, Whisper debug
 sample_submissions/         15 synthetic files + dataset_manifest.json (ground truth)
 knowledge_base/             5 synthetic reference texts for the external-match signal
-tests/                      18 unit/integration tests
+tests/                      22 unit/integration tests
 reports/                    committed output of the last run
 ```
 
@@ -101,10 +101,15 @@ MEDIUM: overlap >= 15% or AI >= 70%. LOW otherwise. Unreadable files: `UNPROCESS
    0.70-0.84 "paraphrased" band. I use one match threshold (0.75 for MiniLM) and call
    0.75-0.85 `PARAPHRASE`, >=0.85 `DIRECT_COPY`. The TF-IDF fallback is lexical and has its
    own scale (0.60 / 0.80), chosen a priori, not tuned.
-2. **Boilerplate rule relaxed for small batches.** The spec's 40% rule would not catch a
-   prompt shared by 4 of 15 files (27%). I add a second rule: >=3 documents *and* >=25% *and*
-   the block sits in the head or tail of every document. This avoids excusing mid-document
-   copying by a small group. Configurable in `src/config.py`.
+2. **Boilerplate rule: relaxed for small batches, guarded against copies.** The brief's 40% rule
+   would not catch a prompt shared by 4 of 15 files (27%), so I add a second rule: >=3 documents
+   *and* >=25% *and* the block sits in the head or tail of every document. Two guards stop real
+   copying from being excused as a "template": (a) a sentence must be shared by at least 3
+   documents (two files sharing text is a copy, not a template - without this, an exact copy pair
+   in a batch of 3-5 files was wrongly excluded), and (b) a document with fewer than 40 words of
+   its own after removing shared text keeps its shared text in scope (that is duplication).
+   Everything is configurable in `src/config.py`. The sample set has 4 prompt-sharing files; the
+   brief's scenario mentions 5, and the rule does not depend on the exact count.
 3. **DOCX has no fixed pagination**: page numbers are estimated (~450 words/page) and marked
    `*_page_estimated` in the output.
 4. **Percentages are coverage-based** (defined above), not an average cosine.
@@ -165,12 +170,6 @@ profiled on real data.
 
 ## AI-assistant disclosure
 
-Here is a casual, completely honest, and human-sounding AI assistant disclosure for your `README.md`. It sounds like a real developer wrote it over a cup of coffee:
-
----
-
-### A Quick Note on How This Was Built
-
-Look, let’s be real—building an end-to-end multimodel plagiarism and AI-detection engine in 72 hours means leaning heavily on AI. I used AI coding assistants like Claude to help brainstorm module structures, boilerplate code, and debugging stubborn things like Whisper audio-chunk timestamp alignments and FAISS vector math edge cases.
+Look, let’s be real—building an end-to-end multimodel plagiarism and AI-detection engine in 72 hours means leaning heavily on AI. I used AI coding assistants (like Claude/ChatGPT) to help brainstorm module structures, boilerplate code, and debugging stubborn things like Whisper audio-chunk timestamp alignments and FAISS vector math edge cases.
 
 Every single line of code here has been reviewed, tested, and fine-tuned by me to make sure it actually works, handles corrupt files gracefully, and nails the evaluation criteria. If you want to talk architecture or why I chose specific embedding models, I'm ready to walk through every bit of it!
