@@ -1,0 +1,26 @@
+{
+  "document_id": "10_corrupted_empty.pdf",
+  "total_integrity_risk": "UNPROCESSABLE",
+  "status": "UNPROCESSABLE",
+  "scores": {},
+  "peer_matches": [],
+  "multimodal_matches": [],
+  "external_matches": [],
+  "explanations": "",
+  "direction_hints": [],
+  "warnings": [
+    "File is empty (0 bytes)"
+  ],
+  "boilerplate_excluded": [],
+  "section_level_view": [],
+  "ai_detection_detail": {},
+  "coverage_by_document_pct": {},
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [],
+    "n_documents": 15
+  }
+}

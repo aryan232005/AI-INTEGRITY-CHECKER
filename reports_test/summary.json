@@ -1,0 +1,191 @@
+{
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [
+      "04_pitch_supply_chain.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised.",
+      "13_original_pitch_bikes.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised."
+    ],
+    "n_documents": 15
+  },
+  "timings_s": {
+    "ingestion": 15.0,
+    "indexing": 114.8,
+    "scoring": 0.12,
+    "total": 130.93
+  },
+  "documents": [
+    {
+      "document_id": "01_market_entry_vietnam.docx",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 57.2
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "02_vietnam_entry_strategy.docx",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 57.2
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "03_supply_chain_report.pdf",
+      "risk": "MEDIUM",
+      "scores": {
+        "peer_similarity_percentage": 30.3,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 51.1
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "04_pitch_supply_chain.mp4",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 100.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": null
+      },
+      "warnings": [
+        "Whisper unavailable (TypeError); trying sidecar transcript"
+      ]
+    },
+    {
+      "document_id": "05_ai_education_essay.docx",
+      "risk": "MEDIUM",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 99.8
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "06_case_alpha.pdf",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 3.8
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "07_case_bravo.docx",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 9.0
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "08_case_charlie.pdf",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 8.6
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "09_case_delta.docx",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 13.3
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "10_corrupted_empty.pdf",
+      "risk": "UNPROCESSABLE",
+      "scores": {},
+      "warnings": [
+        "File is empty (0 bytes)"
+      ]
+    },
+    {
+      "document_id": "11_silent_pitch.mp4",
+      "risk": "UNPROCESSABLE",
+      "scores": {},
+      "warnings": [
+        "MP4 audio track is silent - nothing to transcribe"
+      ]
+    },
+    {
+      "document_id": "12_snack_market_partnering.docx",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 86.2,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 45.8
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "13_original_pitch_bikes.mp4",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": null
+      },
+      "warnings": [
+        "Whisper unavailable (TypeError); trying sidecar transcript"
+      ]
+    },
+    {
+      "document_id": "14_bakery_mill_report.pdf",
+      "risk": "HIGH",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 52.7,
+        "ai_generated_probability": 11.6
+      },
+      "warnings": []
+    },
+    {
+      "document_id": "15_urban_beekeeping.pdf",
+      "risk": "LOW",
+      "scores": {
+        "peer_similarity_percentage": 0.0,
+        "external_similarity_percentage": 0.0,
+        "ai_generated_probability": 7.5
+      },
+      "warnings": []
+    }
+  ],
+  "peer_overlap_matrix_pct": {
+    "01_market_entry_vietnam.docx": {
+      "02_vietnam_entry_strategy.docx": 100.0,
+      "12_snack_market_partnering.docx": 100.0
+    },
+    "02_vietnam_entry_strategy.docx": {
+      "01_market_entry_vietnam.docx": 100.0,
+      "12_snack_market_partnering.docx": 100.0
+    },
+    "03_supply_chain_report.pdf": {
+      "04_pitch_supply_chain.mp4": 30.3
+    },
+    "04_pitch_supply_chain.mp4": {
+      "03_supply_chain_report.pdf": 100.0
+    },
+    "12_snack_market_partnering.docx": {
+      "02_vietnam_entry_strategy.docx": 86.2,
+      "01_market_entry_vietnam.docx": 86.2
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "document_id": "12_snack_market_partnering.docx",
+  "total_integrity_risk": "HIGH",
+  "status": "OK",
+  "scores": {
+    "peer_similarity_percentage": 86.2,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": 45.8
+  },
+  "peer_matches": [
+    {
+      "matched_file": "02_vietnam_entry_strategy.docx",
+      "similarity_score": 0.879,
+      "match_type": "DIRECT_COPY",
+      "lexical_jaccard": 0.0,
+      "query_passage": "Rather than setting up a fully owned subsidiary, Northwind Foods ought to break into Vietnam's snack sector by partnering with a local firm. Three findings support this view.",
+      "matched_passage": "Northwind Foods should enter the Vietnamese snack market through a joint venture rather than a wholly owned subsidiary. Our analysis rests on three observations. First, the distribution network in Vietnam is fragmented: roughly 70% of snack sales pass through small family-run shops that no national chain reaches.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    },
+    {
+      "matched_file": "01_market_entry_vietnam.docx",
+      "similarity_score": 0.879,
+      "match_type": "DIRECT_COPY",
+      "lexical_jaccard": 0.0,
+      "query_passage": "Rather than setting up a fully owned subsidiary, Northwind Foods ought to break into Vietnam's snack sector by partnering with a local firm. Three findings support this view.",
+      "matched_passage": "Northwind Foods should enter the Vietnamese snack market through a joint venture rather than a wholly owned subsidiary. Our analysis rests on three observations. First, the distribution network in Vietnam is fragmented: roughly 70% of snack sales pass through small family-run shops that no national chain reaches.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    },
+    {
+      "matched_file": "02_vietnam_entry_strategy.docx",
+      "similarity_score": 0.821,
+      "match_type": "PARAPHRASE",
+      "lexical_jaccard": 0.0,
+      "query_passage": "A domestic ally already holds those ties, whereas creating them ourselves would consume four or five years. Next, permission to bring in foreign flavour ingredients may take as long as eleven months, but a partner that already holds a permit shortens the wait to around three months.",
+      "matched_passage": "A local partner already has those relationships, and building them from scratch would take us four to five years. Second, regulatory approval for imported flavourings can take up to eleven months, whereas a partner with an existing licence cuts that to about three.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    },
+    {
+      "matched_file": "01_market_entry_vietnam.docx",
+      "similarity_score": 0.821,
+      "match_type": "PARAPHRASE",
+      "lexical_jaccard": 0.0,
+      "query_passage": "A domestic ally already holds those ties, whereas creating them ourselves would consume four or five years. Next, permission to bring in foreign flavour ingredients may take as long as eleven months, but a partner that already holds a permit shortens the wait to around three months.",
+      "matched_passage": "A local partner already has those relationships, and building them from scratch would take us four to five years. Second, regulatory approval for imported flavourings can take up to eleven months, whereas a partner with an existing licence cuts that to about three.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    },
+    {
+      "matched_file": "02_vietnam_entry_strategy.docx",
+      "similarity_score": 0.796,
+      "match_type": "PARAPHRASE",
+      "lexical_jaccard": 0.014,
+      "query_passage": "The chief danger is that we lose command over the quality of the brand. We suggest owning 51% of the joint company, keeping the entitlement to inspect the plant every quarter, and retaining the last word on recipes and packaging.",
+      "matched_passage": "The main risk is loss of control over brand quality. We propose to hold 51% of the venture, keep the right to audit the factory quarterly, and reserve the final say over packaging and recipes.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    },
+    {
+      "matched_file": "01_market_entry_vietnam.docx",
+      "similarity_score": 0.796,
+      "match_type": "PARAPHRASE",
+      "lexical_jaccard": 0.014,
+      "query_passage": "The chief danger is that we lose command over the quality of the brand. We suggest owning 51% of the joint company, keeping the entitlement to inspect the plant every quarter, and retaining the last word on recipes and packaging.",
+      "matched_passage": "The main risk is loss of control over brand quality. We propose to hold 51% of the venture, keep the right to audit the factory quarterly, and reserve the final say over packaging and recipes.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    },
+    {
+      "matched_file": "02_vietnam_entry_strategy.docx",
+      "similarity_score": 0.775,
+      "match_type": "PARAPHRASE",
+      "lexical_jaccard": 0.024,
+      "query_passage": "Should the partner reject these conditions, we could fall back on licensing and accept a smaller profit share. In short, partnering sacrifices part of the margin in exchange for pace, and since the first two years determine who obtains shelf space, pace outweighs margin.",
+      "matched_passage": "If the partner refuses these terms, a licensing deal with a smaller share of the profit is the fallback. Overall, a joint venture trades some margin for speed, and in a market where the first two years decide who wins shelf space, speed matters more than margin.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    },
+    {
+      "matched_file": "01_market_entry_vietnam.docx",
+      "similarity_score": 0.775,
+      "match_type": "PARAPHRASE",
+      "lexical_jaccard": 0.024,
+      "query_passage": "Should the partner reject these conditions, we could fall back on licensing and accept a smaller profit share. In short, partnering sacrifices part of the margin in exchange for pace, and since the first two years determine who obtains shelf space, pace outweighs margin.",
+      "matched_passage": "If the partner refuses these terms, a licensing deal with a smaller share of the profit is the fallback. Overall, a joint venture trades some margin for speed, and in a market where the first two years decide who wins shelf space, speed matters more than margin.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    },
+    {
+      "matched_file": "02_vietnam_entry_strategy.docx",
+      "similarity_score": 0.775,
+      "match_type": "PARAPHRASE",
+      "lexical_jaccard": 0.055,
+      "query_passage": "Finally, shoppers in that country favour sweet and salty tastes that our existing products lack, which makes adapting the recipes mandatory, and a partner's taste-testing groups would accelerate the work.",
+      "matched_passage": "Third, consumers there prefer sweet-and-salty flavours that our current range does not offer, so product adaptation is unavoidable and a partner's tasting panels will speed it up.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    },
+    {
+      "matched_file": "01_market_entry_vietnam.docx",
+      "similarity_score": 0.775,
+      "match_type": "PARAPHRASE",
+      "lexical_jaccard": 0.055,
+      "query_passage": "Finally, shoppers in that country favour sweet and salty tastes that our existing products lack, which makes adapting the recipes mandatory, and a partner's taste-testing groups would accelerate the work.",
+      "matched_passage": "Third, consumers there prefer sweet-and-salty flavours that our current range does not offer, so product adaptation is unavoidable and a partner's tasting panels will speed it up.",
+      "location": {
+        "query_page": 1,
+        "query_page_estimated": true,
+        "matched_page": 1,
+        "matched_page_estimated": true
+      }
+    }
+  ],
+  "multimodal_matches": [],
+  "external_matches": [],
+  "explanations": "86.2% of the original content overlaps with other submissions (02_vietnam_entry_strategy.docx: 86.2%, 01_market_entry_vietnam.docx: 86.2%). Some matches are paraphrases: high semantic similarity but low word-for-word overlap (Jaccard as low as 0.0). Direction of copying cannot be determined from content alone - check submission times.",
+  "direction_hints": [],
+  "warnings": [],
+  "boilerplate_excluded": [],
+  "section_level_view": [
+    {
+      "chunk": "12_snack_market_partnering.docx#c0",
+      "location": {
+        "page": 1
+      },
+      "best_match_file": "02_vietnam_entry_strategy.docx",
+      "best_match_location": {
+        "page": 1
+      },
+      "cosine": 0.902
+    }
+  ],
+  "ai_detection_detail": {
+    "backend": "stylometric-heuristic",
+    "sentence_length_cv": 0.363,
+    "mean_sentence_words": 22.5,
+    "llm_phrase_per_100w": 0.0,
+    "first_person_per_100w": 1.32,
+    "digit_signal": 1.43,
+    "repeated_sentence_openers": 0.0,
+    "logit": -0.34
+  },
+  "coverage_by_document_pct": {
+    "02_vietnam_entry_strategy.docx": 86.2,
+    "01_market_entry_vietnam.docx": 86.2
+  },
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [
+      "04_pitch_supply_chain.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised.",
+      "13_original_pitch_bikes.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised."
+    ],
+    "n_documents": 15
+  }
+}

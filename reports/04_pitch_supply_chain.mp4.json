@@ -1,0 +1,59 @@
+{
+  "document_id": "04_pitch_supply_chain.mp4",
+  "total_integrity_risk": "HIGH",
+  "status": "OK",
+  "scores": {
+    "peer_similarity_percentage": 100.0,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": null
+  },
+  "peer_matches": [],
+  "multimodal_matches": [
+    {
+      "matched_file": "03_supply_chain_report.pdf",
+      "similarity_score": 0.997,
+      "match_type": "DIRECT_COPY",
+      "lexical_jaccard": 0.828,
+      "query_passage": "Operating margins contracted by 4.2% over Q3 due to supply chain bottlenecks at the Rotterdam Hub. Fuel surcharges rose faster than we could pass on to customers.",
+      "matched_passage": "Operating margins contracted by 4.2% over Q3 due to supply chain bottlenecks at the Rotterdam hub. Fuel surcharges rose faster than we could pass them on to customers.",
+      "location": {
+        "query_timestamp": "00:00:00 - 00:00:12",
+        "matched_page": 2
+      }
+    },
+    {
+      "matched_file": "03_supply_chain_report.pdf",
+      "similarity_score": 0.871,
+      "match_type": "DIRECT_COPY",
+      "lexical_jaccard": 0.246,
+      "query_passage": "Too long haul carriers failed to meet a breed delivery window, and we paid penalty fees on 31 shipments. In response, we have moved 40% on Rotterdam Hub to the Antwerp Terminal.",
+      "matched_passage": "Two long-haul carriers failed to meet agreed delivery windows, and we paid penalty fees on thirty-one shipments. In response we have moved forty percent of Rotterdam volume to the Antwerp terminal. We also renegotiated the carrier contracts to include stricter penalties.",
+      "location": {
+        "query_timestamp": "00:00:12 - 00:00:25",
+        "matched_page": 2
+      }
+    }
+  ],
+  "external_matches": [],
+  "explanations": "100.0% of the original content overlaps with other submissions (03_supply_chain_report.pdf: 100.0%). Cross-modal matches present (video transcript <-> document); see multimodal_matches for timestamps and pages. Direction of copying cannot be determined from content alone - check submission times. 100% of this file appears in 03_supply_chain_report.pdf, but only 30% of 03_supply_chain_report.pdf appears here: this file looks derived from (or a subset of) 03_supply_chain_report.pdf.",
+  "direction_hints": [
+    "100% of this file appears in 03_supply_chain_report.pdf, but only 30% of 03_supply_chain_report.pdf appears here: this file looks derived from (or a subset of) 03_supply_chain_report.pdf."
+  ],
+  "warnings": [],
+  "boilerplate_excluded": [],
+  "section_level_view": [],
+  "ai_detection_detail": {
+    "reason": "not applicable to ASR transcripts (no reliable punctuation / sentence structure)"
+  },
+  "coverage_by_document_pct": {
+    "03_supply_chain_report.pdf": 100.0
+  },
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [],
+    "n_documents": 15
+  }
+}

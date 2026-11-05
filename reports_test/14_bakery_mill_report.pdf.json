@@ -1,0 +1,77 @@
+{
+  "document_id": "14_bakery_mill_report.pdf",
+  "total_integrity_risk": "HIGH",
+  "status": "OK",
+  "scores": {
+    "peer_similarity_percentage": 0.0,
+    "external_similarity_percentage": 52.7,
+    "ai_generated_probability": 11.6
+  },
+  "peer_matches": [],
+  "multimodal_matches": [],
+  "external_matches": [
+    {
+      "matched_file": "vertical_integration.txt",
+      "similarity_score": 1.0,
+      "match_type": "DIRECT_COPY",
+      "lexical_jaccard": 1.0,
+      "query_passage": "The costs are significant: large capital commitments, reduced flexibility when technology or demand shifts, and the managerial difficulty of running businesses with very different economics.",
+      "matched_passage": "The costs are significant: large capital commitments, reduced flexibility when technology or demand shifts, and the managerial difficulty of running businesses with very different economics.",
+      "location": {
+        "query_page": 1,
+        "reference_passage": "p2-2"
+      }
+    },
+    {
+      "matched_file": "vertical_integration.txt",
+      "similarity_score": 1.0,
+      "match_type": "DIRECT_COPY",
+      "lexical_jaccard": 1.0,
+      "query_passage": "Vertical integration is a strategy in which a company takes ownership of several stages of its production and distribution chain rather than buying those stages from independent firms. Backward integration moves a firm toward its raw materials and suppliers, while forward integration moves it toward its customers, for example by opening its own retail outlets.",
+      "matched_passage": "Vertical integration is a strategy in which a company takes ownership of several stages of its production and distribution chain rather than buying those stages from independent firms. Backward integration moves a firm toward its raw materials and suppliers, while forward integration moves it toward its customers, for example by opening its own retail outlets.",
+      "location": {
+        "query_page": 1,
+        "reference_passage": "p0-0"
+      }
+    },
+    {
+      "matched_file": "vertical_integration.txt",
+      "similarity_score": 1.0,
+      "match_type": "DIRECT_COPY",
+      "lexical_jaccard": 1.0,
+      "query_passage": "Economists often explain the trade-off through transaction costs. When contracts are hard to write or enforce, owning the activity is cheaper than negotiating for it repeatedly.",
+      "matched_passage": "Economists often explain the trade-off through transaction costs. When contracts are hard to write or enforce, owning the activity is cheaper than negotiating for it repeatedly.",
+      "location": {
+        "query_page": 1,
+        "reference_passage": "p3-4"
+      }
+    }
+  ],
+  "explanations": "52.7% overlaps with reference sources (vertical_integration.txt).",
+  "direction_hints": [],
+  "warnings": [],
+  "boilerplate_excluded": [],
+  "section_level_view": [],
+  "ai_detection_detail": {
+    "backend": "stylometric-heuristic",
+    "sentence_length_cv": 0.558,
+    "mean_sentence_words": 16.4,
+    "llm_phrase_per_100w": 0.0,
+    "first_person_per_100w": 1.78,
+    "digit_signal": 7.06,
+    "repeated_sentence_openers": 0.176,
+    "logit": -4.06
+  },
+  "coverage_by_document_pct": {},
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [
+      "04_pitch_supply_chain.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised.",
+      "13_original_pitch_bikes.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised."
+    ],
+    "n_documents": 15
+  }
+}

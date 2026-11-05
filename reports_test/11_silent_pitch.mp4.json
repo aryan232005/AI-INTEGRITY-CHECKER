@@ -1,0 +1,29 @@
+{
+  "document_id": "11_silent_pitch.mp4",
+  "total_integrity_risk": "UNPROCESSABLE",
+  "status": "UNPROCESSABLE",
+  "scores": {},
+  "peer_matches": [],
+  "multimodal_matches": [],
+  "external_matches": [],
+  "explanations": "",
+  "direction_hints": [],
+  "warnings": [
+    "MP4 audio track is silent - nothing to transcribe"
+  ],
+  "boilerplate_excluded": [],
+  "section_level_view": [],
+  "ai_detection_detail": {},
+  "coverage_by_document_pct": {},
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [
+      "04_pitch_supply_chain.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised.",
+      "13_original_pitch_bikes.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised."
+    ],
+    "n_documents": 15
+  }
+}

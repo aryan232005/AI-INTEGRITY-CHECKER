@@ -1,0 +1,103 @@
+{
+  "document_id": "09_case_delta.docx",
+  "total_integrity_risk": "LOW",
+  "status": "OK",
+  "scores": {
+    "peer_similarity_percentage": 0.0,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": 13.3
+  },
+  "peer_matches": [],
+  "multimodal_matches": [],
+  "external_matches": [],
+  "explanations": "5 shared template/prompt sentence(s) were tagged BOILERPLATE_PROMPT and excluded from scoring.",
+  "direction_hints": [],
+  "warnings": [],
+  "boilerplate_excluded": [
+    {
+      "tag": "BOILERPLATE_PROMPT",
+      "text": "Section 1: Case Prompt",
+      "location": {
+        "page": 1
+      },
+      "shared_by_documents": [
+        "06_case_alpha.pdf",
+        "07_case_bravo.docx",
+        "08_case_charlie.pdf",
+        "09_case_delta.docx"
+      ]
+    },
+    {
+      "tag": "BOILERPLATE_PROMPT",
+      "text": "GreenLoop Packaging is a mid-sized manufacturer of compostable food containers based in Pune, India.",
+      "location": {
+        "page": 1
+      },
+      "shared_by_documents": [
+        "06_case_alpha.pdf",
+        "07_case_bravo.docx",
+        "08_case_charlie.pdf",
+        "09_case_delta.docx"
+      ]
+    },
+    {
+      "tag": "BOILERPLATE_PROMPT",
+      "text": "Over the last three years its revenue has grown by 18% annually, but gross margin has fallen from 34% to 27% because the price of its main input, sugarcane bagasse, has risen while large restaurant-chain customers have demanded lower prices.",
+      "location": {
+        "page": 1
+      },
+      "shared_by_documents": [
+        "06_case_alpha.pdf",
+        "07_case_bravo.docx",
+        "08_case_charlie.pdf",
+        "09_case_delta.docx"
+      ]
+    },
+    {
+      "tag": "BOILERPLATE_PROMPT",
+      "text": "The CEO is deciding between three options: (a) build a second plant closer to the sugarcane belt, (b) sign a long-term supply contract with a single bagasse supplier, or (c) develop a premium product line for health-conscious retail consumers.",
+      "location": {
+        "page": 1
+      },
+      "shared_by_documents": [
+        "06_case_alpha.pdf",
+        "07_case_bravo.docx",
+        "08_case_charlie.pdf",
+        "09_case_delta.docx"
+      ]
+    },
+    {
+      "tag": "BOILERPLATE_PROMPT",
+      "text": "Instructions: Your submission must (1) identify the core problem, (2) evaluate each option against cost, risk and speed, (3) recommend one option with a clear implementation plan, and (4) list the assumptions on which your recommendation depends.",
+      "location": {
+        "page": 1
+      },
+      "shared_by_documents": [
+        "06_case_alpha.pdf",
+        "07_case_bravo.docx",
+        "08_case_charlie.pdf",
+        "09_case_delta.docx"
+      ]
+    }
+  ],
+  "section_level_view": [],
+  "ai_detection_detail": {
+    "backend": "stylometric-heuristic",
+    "sentence_length_cv": 0.447,
+    "mean_sentence_words": 14.9,
+    "llm_phrase_per_100w": 0.0,
+    "first_person_per_100w": 2.98,
+    "digit_signal": 8.57,
+    "repeated_sentence_openers": 0.273,
+    "logit": -3.75
+  },
+  "coverage_by_document_pct": {},
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [],
+    "n_documents": 15
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "embedding": "all-MiniLM-L6-v2",
+  "pair": {
+    "TP": 4,
+    "FP": 0,
+    "FN": 0,
+    "TN": 74,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "external": {
+    "TP": 1,
+    "FP": 0,
+    "FN": 0,
+    "TN": 12,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "ai": {
+    "TP": 1,
+    "FP": 0,
+    "FN": 0,
+    "TN": 10,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "boilerplate_false_pairs": 0,
+  "missed_pairs": [],
+  "spurious_pairs": [],
+  "cosine_positive": [
+    1.000000238418579,
+    0.8788180351257324,
+    0.8788180351257324,
+    0.9247547388076782
+  ],
+  "cosine_negative_max": 0.6836831569671631
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "05_ai_education_essay.docx",
+  "total_integrity_risk": "MEDIUM",
+  "status": "OK",
+  "scores": {
+    "peer_similarity_percentage": 0.0,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": 99.8
+  },
+  "peer_matches": [],
+  "multimodal_matches": [],
+  "external_matches": [],
+  "explanations": "AI-generation likelihood is 99.8% (backend: stylometric-heuristic); treat as a prompt for review, not proof.",
+  "direction_hints": [],
+  "warnings": [],
+  "boilerplate_excluded": [],
+  "section_level_view": [],
+  "ai_detection_detail": {
+    "backend": "stylometric-heuristic",
+    "sentence_length_cv": 0.275,
+    "mean_sentence_words": 19.5,
+    "llm_phrase_per_100w": 11.72,
+    "first_person_per_100w": 0.0,
+    "digit_signal": 0.0,
+    "repeated_sentence_openers": 0.083,
+    "logit": 12.71
+  },
+  "coverage_by_document_pct": {},
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [
+      "04_pitch_supply_chain.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised.",
+      "13_original_pitch_bikes.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised."
+    ],
+    "n_documents": 15
+  }
+}

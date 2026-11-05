@@ -1,0 +1,14 @@
+query \ matched,01_market_entry_vietnam.docx,02_vietnam_entry_strategy.docx,03_supply_chain_report.pdf,04_pitch_supply_chain.mp4,05_ai_education_essay.docx,06_case_alpha.pdf,07_case_bravo.docx,08_case_charlie.pdf,09_case_delta.docx,12_snack_market_partnering.docx,13_original_pitch_bikes.mp4,14_bakery_mill_report.pdf,15_urban_beekeeping.pdf
+01_market_entry_vietnam.docx,,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,100.0,0.0,0.0,0.0
+02_vietnam_entry_strategy.docx,100.0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,100.0,0.0,0.0,0.0
+03_supply_chain_report.pdf,0.0,0.0,,30.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+04_pitch_supply_chain.mp4,0.0,0.0,100.0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+05_ai_education_essay.docx,0.0,0.0,0.0,0.0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+06_case_alpha.pdf,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+07_case_bravo.docx,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,0.0,0.0,0.0,0.0
+08_case_charlie.pdf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,0.0,0.0,0.0
+09_case_delta.docx,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,0.0,0.0
+12_snack_market_partnering.docx,86.2,86.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0,0.0
+13_original_pitch_bikes.mp4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,0.0
+14_bakery_mill_report.pdf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0
+15_urban_beekeeping.pdf,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,

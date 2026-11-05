@@ -1,0 +1,37 @@
+{
+  "document_id": "15_urban_beekeeping.pdf",
+  "total_integrity_risk": "LOW",
+  "status": "OK",
+  "scores": {
+    "peer_similarity_percentage": 0.0,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": 7.5
+  },
+  "peer_matches": [],
+  "multimodal_matches": [],
+  "external_matches": [],
+  "explanations": "No significant overlap or AI-generation indicators found.",
+  "direction_hints": [],
+  "warnings": [],
+  "boilerplate_excluded": [],
+  "section_level_view": [],
+  "ai_detection_detail": {
+    "backend": "stylometric-heuristic",
+    "sentence_length_cv": 0.526,
+    "mean_sentence_words": 17.2,
+    "llm_phrase_per_100w": 0.0,
+    "first_person_per_100w": 1.89,
+    "digit_signal": 12.14,
+    "repeated_sentence_openers": 0.167,
+    "logit": -5.04
+  },
+  "coverage_by_document_pct": {},
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [],
+    "n_documents": 15
+  }
+}

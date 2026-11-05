@@ -1,0 +1,35 @@
+{
+  "document_id": "13_original_pitch_bikes.mp4",
+  "total_integrity_risk": "LOW",
+  "status": "OK",
+  "scores": {
+    "peer_similarity_percentage": 0.0,
+    "external_similarity_percentage": 0.0,
+    "ai_generated_probability": null
+  },
+  "peer_matches": [],
+  "multimodal_matches": [],
+  "external_matches": [],
+  "explanations": "No significant overlap or AI-generation indicators found.",
+  "direction_hints": [],
+  "warnings": [
+    "Whisper unavailable (TypeError); trying sidecar transcript"
+  ],
+  "boilerplate_excluded": [],
+  "section_level_view": [],
+  "ai_detection_detail": {
+    "reason": "not applicable to ASR transcripts (no reliable punctuation / sentence structure)"
+  },
+  "coverage_by_document_pct": {},
+  "run_info": {
+    "embedding_backend": "all-MiniLM-L6-v2",
+    "match_threshold": 0.75,
+    "direct_threshold": 0.85,
+    "version": "1.0.0",
+    "notes": [
+      "04_pitch_supply_chain.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised.",
+      "13_original_pitch_bikes.mp4: transcript came from a sidecar file - Whisper was not available in this environment, so ASR was NOT exercised."
+    ],
+    "n_documents": 15
+  }
+}
