@@ -1,0 +1,22 @@
+[
+ {
+  "start": 0.0,
+  "end": 5.01,
+  "text": "Hi everyone, we are building a bicycle sharing app for university campuses."
+ },
+ {
+  "start": 5.36,
+  "end": 11.72,
+  "text": "Students unlock a bike with their phone, ride between lecture halls, and park it at any marked rack."
+ },
+ {
+  "start": 12.07,
+  "end": 17.39,
+  "text": "Our pilot with two hundred bikes showed that each bike was used seven times a day."
+ },
+ {
+  "start": 17.74,
+  "end": 21.24,
+  "text": "We want to expand to ten campuses by next autumn."
+ }
+]

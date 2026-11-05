@@ -1,0 +1,88 @@
+{
+  "description": "Ground truth for the synthetic sample set. All text is synthetic.",
+  "files": {
+    "01_market_entry_vietnam.docx": {
+      "role": "original source A"
+    },
+    "02_vietnam_entry_strategy.docx": {
+      "role": "EXACT COPY of 01"
+    },
+    "03_supply_chain_report.pdf": {
+      "role": "source of the cross-modal match (page 2)"
+    },
+    "04_pitch_supply_chain.mp4": {
+      "role": "reads page-2 paragraph of 03 aloud, one word dropped"
+    },
+    "05_ai_education_essay.docx": {
+      "role": "LLM-style essay (AI-generated)"
+    },
+    "06_case_alpha.pdf": {
+      "role": "original + shared 150-word prompt"
+    },
+    "07_case_bravo.docx": {
+      "role": "original + shared 150-word prompt"
+    },
+    "08_case_charlie.pdf": {
+      "role": "original + shared 150-word prompt"
+    },
+    "09_case_delta.docx": {
+      "role": "original + shared 150-word prompt"
+    },
+    "10_corrupted_empty.pdf": {
+      "role": "degraded: 0-byte PDF"
+    },
+    "11_silent_pitch.mp4": {
+      "role": "degraded: MP4 whose audio is silent"
+    },
+    "12_snack_market_partnering.docx": {
+      "role": "PARAPHRASE of 01 (synonym rewording)"
+    },
+    "13_original_pitch_bikes.mp4": {
+      "role": "original spoken pitch"
+    },
+    "14_bakery_mill_report.pdf": {
+      "role": "original commentary + paragraph copied verbatim from knowledge_base/vertical_integration.txt"
+    },
+    "15_urban_beekeeping.pdf": {
+      "role": "original independent report"
+    }
+  },
+  "peer_overlap_pairs": [
+    {
+      "a": "01_market_entry_vietnam.docx",
+      "b": "02_vietnam_entry_strategy.docx",
+      "type": "exact_copy"
+    },
+    {
+      "a": "01_market_entry_vietnam.docx",
+      "b": "12_snack_market_partnering.docx",
+      "type": "paraphrase"
+    },
+    {
+      "a": "02_vietnam_entry_strategy.docx",
+      "b": "12_snack_market_partnering.docx",
+      "type": "paraphrase"
+    },
+    {
+      "a": "03_supply_chain_report.pdf",
+      "b": "04_pitch_supply_chain.mp4",
+      "type": "cross_modal"
+    }
+  ],
+  "external_plagiarism": [
+    "14_bakery_mill_report.pdf"
+  ],
+  "ai_generated": [
+    "05_ai_education_essay.docx"
+  ],
+  "boilerplate_group": [
+    "06_case_alpha.pdf",
+    "07_case_bravo.docx",
+    "08_case_charlie.pdf",
+    "09_case_delta.docx"
+  ],
+  "unprocessable": [
+    "10_corrupted_empty.pdf",
+    "11_silent_pitch.mp4"
+  ]
+}
